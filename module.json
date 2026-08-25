@@ -1,0 +1,26 @@
+{
+    "name": "ecommerce-invoices-and-documents-livewire",
+    "version": "0.1.0",
+    "description": "Two Livewire components for the person a document was issued to: a list of their documents filed under the numbers the documents carry, and one document rendered entirely from what it froze at issue.",
+    "category": "presentation",
+    "provider": "Liberu\\Ecommerce\\InvoicesAndDocuments\\Livewire\\InvoicesAndDocumentsLivewireServiceProvider",
+    "requires": {
+        "packages": {
+            "liberusoftware/ecommerce-invoices-and-documents": "^0.1"
+        }
+    },
+    "features": [
+        "Every value rendered comes from the document's own frozen rows, so no template traverses a relation into the catalogue or the customer",
+        "A document renders identically with the sale seam unbound, which is the whole claim the freeze makes",
+        "Documents are identified by the reference the domain minted; no primary key reaches a template, a wire:key or a component property",
+        "A document is filed under its own number, and a proforma issued without a series says it is not numbered rather than borrowing a key",
+        "Every amount carries the currency the document recorded, spelled from minor units by integer division; there is no currency symbol anywhere in the package",
+        "Tax is shown per line and per distinct rate, from figures the tax module computed and this package only ever adds",
+        "A reader reaches a document through the buyer reference the document froze, checked by the domain's CustodyPolicy, never through a role name",
+        "No such reference, another tenant's, another person's and one nobody issued are one refusal with one message",
+        "A redacted document leaves a reader's list, because erasure rewrites the buyer reference the claim is made on",
+        "Every public property is locked; nothing on either component is writable by a browser, and neither component writes anything",
+        "The list is bounded by a locked limit, so a browser cannot ask this page for every document a person holds",
+        "Every concrete domain exception is classified to a message a reader may see, so a new one cannot arrive as an unhandled error"
+    ]
+}
